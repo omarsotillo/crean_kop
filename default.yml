@@ -1,0 +1,86 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'db/schema.rb'
+    - 'doc/**/*'
+    - 'docker_app/**/*'
+    - 'Guardfile'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'playground/**/*'
+    - 'public/**/*'
+    - 'node_modules/**/*'
+
+# Models can have a bunch of attributes which lead to long methods and high
+# complexity values. However, these methods are still very readable because they
+# usually have a lot of repetition.
+Metrics:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+# We need to configure exemptions for blocks that we generally accept to be
+# long, since they are less comparable to methods and more comparable to
+# modules/classes.
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
+    - namespace
+    - factory
+    - define
+    - shared_examples_for
+    - shared_examples
+    - xcontext
+    - xdescribe
+  Exclude:
+    - 'config/environments/*.rb' # instead of excluding all :configure methods
+    - 'config/routes.rb'
+    - 'spec/spec_helper.rb' # instead of excluding all :configure methods
+    - '*.gemspec' # a gemspec could easily have more than the 25 lines limit
+
+
+Metrics/MethodLength:
+  Max: 16
+
+ClassLength:
+  Max: 120
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: true
+  Exclude:
+    - '*.gemspec'
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Style/ModuleFunction:
+  Enabled: false
+
+# While it is very often useful to separate numbers after every three digits
+# for readability, this mostly doesn't make sense if the number doesn't
+# represent an amount but rather an identifier. Thus the use of underscores
+# every three digits is recommended but not enforced.
+Style/NumericLiterals:
+  Enabled: false
+
+# Do not force the same one letter variable names for all occurences of inject
+Style/SingleLineBlockParams:
+  Enabled: false
+
+MultilineMethodCallBraceLayout:
+  EnforcedStyle: new_line
+
+MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%W': '[]'
+    '%i': '[]'
+    '%w': '[]'
