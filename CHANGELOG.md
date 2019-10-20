@@ -1,3 +1,7 @@
+## Version 1.0.2
+
+* Removes metadata
+
 ## Version 1.0.1
 
 * Adds metadata

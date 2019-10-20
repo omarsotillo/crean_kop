@@ -13,14 +13,14 @@ Gem::Specification.new do |gem|
   gem.authors       = ['Omar Sotillo']
   gem.email         = ['omarsotillofranco@gmail.com']
   gem.summary       = 'Dependency and configuration for rubocop.'
-  
+
   gem.metadata = {
-    'homepage_uri'    => 'https://github.com/creanlabs/crean_kop',
+    'homepage_uri' => 'https://github.com/creanlabs/crean_kop',
     'source_code_uri' => 'https://github.com/creanlabs/crean_kop',
-    'changelog_uri'   => 'https://github.com/creanlabs/crean_kop/CHANGELOG.md'
+    'changelog_uri' => 'https://github.com/creanlabs/crean_kop/CHANGELOG.md'
   }
   gem.files         = `git ls-files -z`.split("\x0")
-    .reject { |f| f.match(%r{^spec/}) }
+                                       .reject { |f| f.match(%r{^spec/}) }
   gem.require_paths = ['lib']
 
   gem.add_dependency 'rubocop'

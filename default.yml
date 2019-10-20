@@ -42,9 +42,6 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Max: 16
 
-ClassLength:
-  Max: 120
-
 Style/AsciiComments:
   Enabled: false
 
@@ -62,25 +59,8 @@ Style/FrozenStringLiteralComment:
 Style/ModuleFunction:
   Enabled: false
 
-# While it is very often useful to separate numbers after every three digits
-# for readability, this mostly doesn't make sense if the number doesn't
-# represent an amount but rather an identifier. Thus the use of underscores
-# every three digits is recommended but not enforced.
 Style/NumericLiterals:
   Enabled: false
 
-# Do not force the same one letter variable names for all occurences of inject
 Style/SingleLineBlockParams:
   Enabled: false
-
-MultilineMethodCallBraceLayout:
-  EnforcedStyle: new_line
-
-MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-
-PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%W': '[]'
-    '%i': '[]'
-    '%w': '[]'
